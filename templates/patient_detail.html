@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 style="margin-top: 20px; text-align: center; font-weight: bold;">Patient Name: {{ patient.first_name }} {{ patient.last_name }}</h1>
+    
+    <div  class="row">
+        <div class="col-8">
+        <hr/>
+        <table class="table table-borderless " style="margin-left: 100px; padding: 0px;">
+         <tr> 
+          <tr>
+           
+            <td><h4><strong>ID: </strong></h4></td>
+            <td style="font-weight: bolder;">{{ patient.Id }} </td>
+            
+          </tr>
+          <tr> 
+            <td ><h4><strong>Age: </strong></h4> </td>
+            <td style="font-weight: bolder;">{{ patient.age }}</td>
+            
+          </tr> 
+          <tr>
+           <td > <h4><strong>Date Of Birth: </strong></h4></td>
+           <td style="font-weight: bolder;"> {{ patient.date_of_birth }}   </td>
+          </tr>
+          <tr> 
+            <td ><h4><strong>Gender: </strong></h4></td>
+            <td style="font-weight: bolder;"> {{ patient.gender }}</td>
+           </tr> 
+           <tr>
+           <td > <h4><strong>Phone Number: </strong></h4></td>
+           <td style="font-weight: bolder;"> {{ patient.phone }} </td>
+  
+           </tr>
+            <tr>
+             <td><h4><strong>Responsible Party: </strong></h4></td>
+             <td style="font-weight: bolder;"> {{ patient.Responsible_party }} </td>
+
+
+            </tr>
+            <tr>
+             <td><h4><strong>Height: </strong></h4></td>
+             <td style="font-weight: bolder;"> {{ patient.height }} </td>
+            </tr>
+            <tr>
+                <td> <h4><strong>Weight: </strong></h4> </td>
+                <td style="font-weight: bolder;"> {{ patient.weight }} </td>
+            </tr>
+            <tr>
+                <td>  <h4><strong>Integrated Doctors: </strong></h4> </td>
+                <td style="font-weight: bolder;"> {{ patient.integrated_doctors }} </td>
+            </tr>
+            <tr>
+               <td> <h4><strong>Surgical History: </strong></h4> </td>
+               <td style="font-weight: bolder;">{{ patient.surgical }} </td> 
+            </tr>
+            <tr>
+                <td> <h4><strong>Primary Diagnosis: </strong></h4></td>
+                <td style="font-weight: bolder;"> {{ patient.primary_diagnosis }} </td>
+            </tr>
+            
+         </tr> 
+        </table>
+        </div>
+    </div>
+<div class="container">
+    <hr/>
+    <h4 style="font-weight: bolder; font-size: large; text-align: center;"> FollowUP</h4>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>sessions</th>
+                <th>date</th>
+                <th>signature</th>
+                <th>notes</th>
+
+            </tr>
+        </thead>
+        
+        {% for treatts in patient.treattt.all %}
+            <tr>
+                <td> {{treatts.sessions}}</td>
+                <td> {{treatts.date}}</td>
+                <td> {{treatts.signature}}</td>
+                <td> {{treatts.notes}}</td>
+
+            </tr>
+        {% endfor %}
+        
+    </table>
+
+</div>
+
+<div class="container">
+    <a href="{% url 'treatment' %}" class="btn btn-danger">
+        Add New Treatment
+    </a>
+</div>
+    
+{% endblock %}

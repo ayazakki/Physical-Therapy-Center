@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="position: relative;padding-right: 50%;">
+    <form style=" position: relative;left:500px;margin:25px;" 
+    class="d-flex" method="post" action="{% url 'search-center_p' %}">
+      {% csrf_token %}        
+      <input style="width: 200px; " class="form-control me-2"
+              type="search"
+              placeholder="search"
+              aria-label="search"
+              name="searched">
+              <button class="btn btn-outline-secondary"
+              type="submit">Search</button>
+            </form>
+</div>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Id</th>
+                <!--
+                <th>Age</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Responsible Party</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Integrated Doctors</th>
+                <th>Surgical History</th>
+                <th>Primary Diagnosis</th>
+                <th>Therapist</th>
+                <th>Treatment</th>
+                -->
+            </tr>
+        </thead>
+        {% for p in patients %}
+            <tr>
+                <td><a href="{{ p.get_absolute_url }}">{{p.first_name}}</a></td>
+                <td>{{p.last_name}}</td>
+                <td>{{p.Id}}</td>
+                <td align="center"> <a href="{% url 'delete-patient' p.Id %}" class="btn btn-outline-danger">
+                    Delete
+                    </a>
+                
+                 <a href="{% url 'update-patient' p.Id %}" class="btn btn-outline-secondary ">
+                    Edit
+                    </a>
+                </td>
+                <!--
+                <td>{{p.age}}</td>
+                <td>{{p.date_of_birth}}</td>
+                <td>{{p.gender}}</td>
+                <td>{{p.phone}}</td>
+                <td>{{p.Responsible_party}}</td>
+                <td>{{p.height}}</td>
+                <td>{{p.weight}}</td>
+                <td>{{p.integrated_doctors}}</td>
+                <td>{{p.surgical}}</td>
+                <td>{{p.primary_diagnosis}}</td>
+                <td>{{p.therapist}}</td>
+                <td>{{p.treatment}}</td>
+                -->
+            </tr>
+        {% endfor %}
+    </table>
+
+
+    
+    <div class="container">
+        <a href="{% url 'patient' %}" class="btn btn-outline-primary" style="position: relative;right:260px">
+            Add New Patient
+        </a>
+    </div>
+{% endblock %}

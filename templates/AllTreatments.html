@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <!--<th>Patient</th>-->
+                <th>Sessions</th>
+                <th>Date</th>
+                <th>Signature</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        {% for treat in treatments %}
+            <tr>
+                <!--<td>{{treat.patient}}</td>-->
+                <td>{{treat.sessions}}</td>
+                <td>{{treat.date}}</td>
+                <td>{{treat.signature}}</td>
+                <td>{{treat.notes}}</td>
+                <td align="center">
+                    <a href="{% url 'delete-treatment' treat.id %}" class="btn btn-outline-danger">
+                        Delete
+                        </a>   
+                     <a href="{% url 'update-treatment' treat.id %}" class="btn btn-outline-secondary">
+                        Edit
+                        </a>
+                    
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="container">
+        <a href="{% url 'treatment' %}" class="btn btn-outline-primary" style="position: relative;right:260px">
+            Add New Treatment
+        </a>
+    </div>
+{% endblock %}

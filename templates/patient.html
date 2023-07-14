@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+            <div class="jumbotron text-center" style="background-color: #41729F;">
+              <h1 style="color:white; font-family: Lato, sans-serif, Montserrat, sans-serif;">Add A Patient</h1>
+            </div>
+            <hr>
+            <form method="post" style="padding-left: 300px;">
+                {% csrf_token %}
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                      {{form.first_name.label_tag}}
+                      {{form.first_name}}
+                    </div>
+                    <div class="col-4">
+                      {{form.last_name.label_tag}}
+                      {{form.last_name}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-8">
+                    {{form.Id.label_tag}}
+                    {{form.Id}}
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                      {{form.age.label_tag}}
+                      {{form.age}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-8">
+                    {{form.date_of_birth.label_tag}}
+                    {{form.date_of_birth}}
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                      {{form.gender.label_tag}}
+                      {{form.gender}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-8">
+                    {{form.phone.label_tag}}
+                    {{form.phone}}
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                      {{form.Responsible_party.label_tag}}
+                      {{form.Responsible_party}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-4">
+                    {{form.height.label_tag}}
+                    {{form.height}}
+                  </div>
+                  <div class="col-4">
+                    {{form.weight.label_tag}}
+                    {{form.weight}}
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-8">
+                    {{form.integrated_doctors.label_tag}}
+                    {{form.integrated_doctors}}
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                      {{form.surgical.label_tag}}
+                      {{form.surgical}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-8">
+                    {{form.primary_diagnosis.label_tag}}
+                    {{form.primary_diagnosis}}
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                      {{form.therapist.label_tag}}
+                      {{form.therapist}}
+                    </div>
+                    <div class="col-4">
+                      {{form.treatment.label_tag}}
+                      {{form.treatment}}
+                    </div>
+                </div>
+                <br>
+
+
+                
+                <input type="submit" value="submit" class="btn btn-primary">
+            </form>
+
+{% endblock %}

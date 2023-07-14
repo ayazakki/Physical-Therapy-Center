@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="jumbotron text-center" style="background-color: #41729F;">
+        <h1 style="color:white; font-family: Lato, sans-serif, Montserrat, sans-serif;">Add A Therapist</h1>
+    </div>
+            <hr>
+            <form method="post" style="padding-left: 300px;">
+                {% csrf_token %}
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                        {{form.first_name.label_tag}}
+                        {{form.first_name}}
+                    </div>
+                    <div class="col-4">
+                        {{form.last_name.label_tag}}
+                        {{form.last_name}}
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-8">
+                        {{form.id.label_tag}}
+                        {{form.id}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.username.label_tag}}
+                        {{form.username}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.age.label_tag}}
+                        {{form.age}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.date_of_birth.label_tag}}
+                        {{form.date_of_birth}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.gender.label_tag}}
+                        {{form.gender}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.phone.label_tag}}
+                        {{form.phone}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.university.label_tag}}
+                        {{form.university}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.degree.label_tag}}
+                        {{form.degree}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.specialty.label_tag}}
+                        {{form.specialty}}
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Update" class="btn btn-primary">
+            </form>
+      
+            
+{% endblock %}

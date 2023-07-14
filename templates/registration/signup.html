@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Page{% endblock title %}
+
+{% block content %} 
+    <div class="container" >
+  
+    <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 1rem; background-color: #C2DEDC; width:550px;" >
+                <div class="card-body p-5 text-center">
+      
+                  <h1 class="mb-5" style="font-weight: bolder;">Sign Up</h1>
+                  <hr>
+       
+          <br>
+          <div class="form-outline mb-4">
+            <div  class="form-control-lg">
+              <div class="form-label">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+        </div>
+        </div>
+        </div>
+        <div class="form-outline mb-4">
+          <div  class="form-control-lg">
+            <div class="form-label">
+              {{ form.first_name.label_tag }}
+              {{ form.first_name }}
+      </div>
+      </div>
+      </div>
+      <div class="form-outline mb-4">
+        <div  class="form-control-lg">
+          <div class="form-label">
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+    </div>
+    </div>
+    </div>
+       
+      <div class="form-outline mb-4">
+        <div  class="form-control-lg">
+          <div class="form-label">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+    </div>
+    </div>
+    </div>
+    <div class="form-outline mb-4">
+      <div class="form-control-lg">
+      <div class="form-label">
+       {{ form.password1.label_tag }}
+       {{ form.password1 }}
+    </div>
+    </div>
+    </div>
+    <div class="form-outline mb-4">
+      <div class="form-control-lg">
+      <div class="form-label">
+       {{ form.password2.label_tag }}
+      {{ form.password2 }}
+    </div>
+    </div>
+    </div>
+    </div> 
+          <input type="submit" value="signup" class="btn btn-primary" style="background-color: #116A7B;margin-bottom: 20px;height: 50px;font-size: 23px;">
+       
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+        </form>
+    </div>
+    {% endblock content %}

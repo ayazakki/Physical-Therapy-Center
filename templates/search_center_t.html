@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
+    {% if searched %}
+      <h1 align="center">you searched for {{searched}}</h1>
+        <br/>
+        {% for the in therapist %}
+        <a href="{% url 'therapist-detail' the.id %}">
+            <ol class="list-group list-group-horizontal">
+                <li class="list-group-item" style="margin:10px;font-size:30px;font-family: Arial, Helvetica, sans-serif;">{{ the }} {{the.last_name}}</li>
+            </ol>
+        </a>    
+        {% endfor %}
+    {% else %}
+        <h1>Hey!! you forget to search</h1>
+
+{% endif %}
+     
+{% endblock %}

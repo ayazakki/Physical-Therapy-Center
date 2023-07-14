@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>device name</th>
+                <th>clinic</th>
+                <th> date of supply</th>
+                <!--<th>name</th>-->
+                <th>country</th>
+                <th>model</th>
+                <th>agent</th>
+                <th>serial</th>
+                <th>company</th>
+                <th>date</th>
+                <th>Eng signature</th>
+                <th>Company signature</th>
+                <th>condition</th>
+                <th>notes</th>
+                
+            </tr>
+        </thead>
+        {% for m in maintenance %}
+            <tr>
+                <td>{{m.device_name}}</td>
+
+                <td>{{m.clinic}}</td>
+                <td>{{m.date_of_supply}}</td>
+                <!--<td>{{m.name}}</td>-->
+                <td>{{m.country}}</td>
+                <td>{{m.model}}</td>
+                <td>{{m.agent}}</td>
+                <td>{{m.serial}}</td>
+                <td>{{m.company}}</td>
+                <td>{{m.date}}</td>
+                <td>{{m.Eng_signature}}</td>
+                <td>{{m.Company_signature}}</td>
+                <td>{{m.device_condition}}</td>
+                <td>{{m.notes}}</td>
+                <td align="center">
+                    <a href="{% url 'delete-maintenance' m.serial %}" class="btn btn-outline-danger">
+                        Delete
+                        </a>   
+                    <a href="{% url 'update-maintenance' m.serial %}" class="btn btn-outline-secondary">
+                       Edit
+                       </a>
+                  
+                   
+               </td>
+                
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="container">
+        <a href="{% url 'Maintenance' %}" class="btn btn-outline-primary" style="position: relative;right:260px">
+            Add New Maintenance
+        </a>
+    </div>
+{% endblock %}

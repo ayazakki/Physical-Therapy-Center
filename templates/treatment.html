@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class="jumbotron text-center" style="background-color: #41729F;">
+            <h1 style="color:white; font-family: Lato, sans-serif, Montserrat, sans-serif;">Follow-Up Sheet</h1>
+        </div>
+            <hr>
+            <form method="post" style="padding-left: 300px;">
+                {% csrf_token %}
+                <br>
+                <div class='row'>
+                    <div class="col-8">
+                        {{form.sessions.label_tag}}
+                        {{form.sessions}}
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-8">
+                        {{form.date.label_tag}}
+                        {{form.date}}
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-8">
+                        {{form.signature.label_tag}}
+                        {{form.signature}}
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-8">
+                        {{form.notes.label_tag}}
+                        {{form.notes}}
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-8">
+                        {{form.patient.label_tag}}
+                        {{form.patient}}
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="submit" class="btn btn-primary">
+            </form>
+      
+{% endblock %}

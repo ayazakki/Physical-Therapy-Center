@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+
+                <th>Device name</th>
+                <th>Damage date</th>
+                <th>Damage reason</th>
+                <th>Report date</th>
+                <th>Check notes</th>
+                <th>Examination officer name</th>
+                <th>Nurse name</th>
+               
+            </tr>
+        </thead>
+        {% for d in damages %}
+            <tr>
+                <td>{{d.id}}</td>
+
+                <td>{{d.Devicess}}</td>
+                <td>{{d.damage_date}}</td>
+                <td>{{d.damage_reason}}</td>
+                <td>{{d.report_date}}</td>
+                <td>{{d.check_notes}}</td>
+                <td>{{d.Examination_officer_name}}</td>
+                <td>{{d.nurse_name}}</td>
+                <td align="center"> 
+                    <a href="{% url 'delete-damage' d.id %}" class="btn btn-outline-danger">
+                        Delete
+                        </a>   
+                    <a href="{% url 'update-damage' d.id %}" class="btn btn-outline-secondary">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="container">
+        <a href="{% url 'damage' %}" class="btn btn-outline-primary" style="position: relative;right:260px">
+            Add New Damaged Device
+        </a>
+    </div>
+{% endblock %}

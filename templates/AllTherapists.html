@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="position: relative;padding-right: 50%;">
+    <form style=" position: relative;left:500px;margin:25px;" 
+    class="d-flex" method="post" action="{% url 'search-center_t' %}">
+      {% csrf_token %}        
+      <input style="width: 200px;" class="form-control me-2"
+              type="search"
+              placeholder="search"
+              aria-label="search"
+              name="searched">
+              <button class="btn btn-outline-secondary"
+              type="submit">Search</button>
+            </form>
+</div>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Age</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>University</th>
+                <th>Degree</th>
+                <th>Specialty</th>
+            </tr>
+        </thead>
+        {% for t in therapist %}
+            <tr>
+                <td><a href="{{ t.get_absolute_url }}">{{t.first_name}}</a></td>
+                <td>{{t.last_name}}</td>
+                <td>{{t.id}}</td>
+                <td>{{t.username}}</td>
+                <td>{{t.age}}</td>
+                <td>{{t.date_of_birth}}</td>
+                <td>{{t.gender}}</td>
+                <td>{{t.phone}}</td>
+                <td>{{t.university}}</td>
+                <td>{{t.degree}}</td>
+                <td>{{t.specialty}}</td>
+                <td align="center"> <a href="{% url 'delete-therapist' t.id %}" class="btn btn-outline-danger">
+                    Delete
+                    </a>
+                     <a href="{% url 'update-therapist' t.id %}" class="btn btn-outline-secondary">
+                        Edit
+                        </a>
+                    
+                </td>
+                
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="container">
+        <a href="{% url 'therapist' %}" class="btn btn-outline-primary" style="position: relative;right:260px">
+            Add New Therapist
+        </a>
+    </div>
+{% endblock %}

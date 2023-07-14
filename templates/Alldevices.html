@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light" style="width: 1000px;">
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Production Date</th>
+                <th>Guarantee Period</th>
+                <th>Price</th>
+                <th>Country Of Manfucature</th>
+                <th>Company Of Manfucature</th>
+                <th>Duration Per Session</th>
+                <th>Max Number Per Day</th>
+                <th>Agent</th>
+                <th>Usage Per Day</th>
+                <th>Department</th>
+                <th>Model</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                
+            </tr>
+        </thead>
+        {% for d in devices %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.deviceid}}</td>
+                
+                <td>{{d.production_date}}</td>
+                <td>{{d.period_of_guarantee}}</td>
+                <td>{{d.price}}</td>
+                <td>{{d.country_of_manfucature}}</td>
+                <td>{{d.company_of_manfucature}}</td>
+                <td>{{d.duration_per_session}}</td>
+                <td>{{d.Max_number_per_day}}</td>
+                <td>{{d.agent}}</td>
+                <td>{{d.usage_per_day}}</td>
+                <td>{{d.department}}</td>
+                <td>{{d.model}}</td>
+                <td>{{d.brand}}</td>
+                <td>{{d.quantity}}</td>
+                <td> <a href="{% url 'delete-device' d.deviceid %}" class="btn btn-outline-danger">
+                    Delete
+                    </a>
+                    <a href="{% url 'update-device' d.deviceid %}" class="btn btn-outline-secondary"style="position: relative;bottom:36px;left:70px;">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="container">
+        <a href="{% url 'devices' %}" class="btn btn-outline-primary" style="position: relative;right:260px">
+            Add a New Device
+        </a>
+    </div>
+{% endblock %}

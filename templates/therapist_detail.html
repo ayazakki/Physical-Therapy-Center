@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 style="margin-top: 20px; text-align: center; font-weight: bold;">Therapist Name: {{ therapist.first_name }} {{ therapist.last_name }}</h1>
+    
+    <div  class="row">
+        <div class="col-8">
+        <hr/>
+        <table class="table table-borderless " style="margin-left: 100px; padding: 0px;">
+         <tr> 
+          <tr>
+
+            
+
+           
+            <td><h4><strong>first_name: </strong></h4></td>
+            <td style="font-weight: bolder;">{{ therapist.first_name }} </td>
+            
+          </tr>
+          <tr> 
+            <td ><h4><strong>last_name: </strong></h4> </td>
+            <td style="font-weight: bolder;">{{ therapist.last_name }}</td>
+            
+          </tr> 
+          <tr>
+           <td > <h4><strong>id: </strong></h4></td>
+           <td style="font-weight: bolder;"> {{ therapist.id }}   </td>
+          </tr>
+          <tr> 
+            <td ><h4><strong>username: </strong></h4></td>
+            <td style="font-weight: bolder;"> {{ therapist.username }}</td>
+           </tr> 
+           <tr>
+           <td > <h4><strong>age: </strong></h4></td>
+           <td style="font-weight: bolder;"> {{ therapist.age }} </td>
+  
+           </tr>
+            <tr>
+             <td><h4><strong>date_of_birth: </strong></h4></td>
+             <td style="font-weight: bolder;"> {{ therapist.date_of_birth }} </td>
+
+
+            </tr>
+            <tr>
+             <td><h4><strong>gender: </strong></h4></td>
+             <td style="font-weight: bolder;"> {{ therapist.gender }} </td>
+            </tr>
+            <tr>
+                <td> <h4><strong>phone: </strong></h4> </td>
+                <td style="font-weight: bolder;"> {{ therapist.phone }} </td>
+            </tr>
+            <tr>
+                <td>  <h4><strong>university: </strong></h4> </td>
+                <td style="font-weight: bolder;"> {{ therapist.university }} </td>
+            </tr>
+            <tr>
+               <td> <h4><strong>degree : </strong></h4> </td>
+               <td style="font-weight: bolder;">{{ therapist.degree }} </td> 
+            </tr>
+            <tr>
+                <td> <h4><strong> specialty: </strong></h4></td>
+                <td style="font-weight: bolder;"> {{ therapist.specialty }} </td>
+            </tr>
+            
+         </tr> 
+        </table>
+        </div>
+    </div>
+
+    
+{% endblock %}

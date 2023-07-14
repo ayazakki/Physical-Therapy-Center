@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+            <div class="jumbotron text-center" style="background-color: #41729F;">
+                <h1 style="color:white; font-family: Lato, sans-serif, Montserrat, sans-serif;">Update A Device</h1>
+            </div>
+            <hr>
+            <form method="post" style="padding-left: 300px;">
+                {% csrf_token %}
+                <br>
+                <div class="row">
+                    <div class="col-4">
+                        {{form.name.label_tag}}
+                        {{form.name}}
+                    </div>
+                    <div class="col-4">
+                        {{form.deviceid.label_tag}}
+                        {{form.deviceid}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.production_date.label_tag}}
+                        {{form.production_date}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.period_of_guarantee.label_tag}}
+                        {{form.period_of_guarantee}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.price.label_tag}}
+                        {{form.price}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.country_of_manfucature.label_tag}}
+                        {{form.country_of_manfucature}}
+                    </div>
+                    
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.company_of_manfucature.label_tag}}
+                        {{form.company_of_manfucature}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.duration_per_session.label_tag}}
+                        {{form.duration_per_session}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.Max_number_per_day.label_tag}}
+                        {{form.Max_number_per_day}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.agent.label_tag}}
+                        {{form.agent}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.usage_per_day.label_tag}}
+                        {{form.usage_per_day}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.department.label_tag}}
+                        {{form.department}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.model.label_tag}}
+                        {{form.model}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.brand.label_tag}}
+                        {{form.brand}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.quantity.label_tag}}
+                        {{form.quantity}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.maintenance.label_tag}}
+                        {{form.maintenance}}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                        {{form.damage.label_tag}}
+                        {{form.damage}}
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Update" class="btn btn-primary">
+            </form>
+      
+            
+{% endblock %}
